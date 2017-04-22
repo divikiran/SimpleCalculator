@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:SimpleCalculator" x:Class="SimpleCalculator.SimpleCalculatorPage">
+	<ContentPage.Content>
+		<Grid BackgroundColor="Gray" RowSpacing="1" ColumnSpacing="1">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="2*" />
+				<RowDefinition Height="*" />
+				<RowDefinition Height="*" />
+				<RowDefinition Height="*" />
+				<RowDefinition Height="*" />
+				<RowDefinition Height="*" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+			<StackLayout Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" BackgroundColor="Aqua">
+				<local:ResultStack />
+			</StackLayout>
+			<StackLayout Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" BackgroundColor="Blue">
+				<local:CalcButton DisplayText="AC" Command="{Binding ClearCommand}" />
+			</StackLayout>
+			<StackLayout Grid.Column="2" Grid.Row="1" BackgroundColor="Gray">
+				<local:CalcButton DisplayText="+/-" Command="{Binding OperatorCommand}" CommandParameter="+-"/>
+			</StackLayout>
+			<StackLayout Grid.Column="3" Grid.Row="1" BackgroundColor="Gray">
+				<local:CalcButton DisplayText="/" LabelColor="#F68212" Command="{Binding OperatorCommand}" CommandParameter="/"/>
+			</StackLayout>
+			<StackLayout Grid.Column="0" Grid.Row="2" BackgroundColor="Aqua">
+				<local:CalcButton DisplayText="7" Command="{Binding NumberCommand}" CommandParameter="7" />
+			</StackLayout>
+			<StackLayout Grid.Column="1" Grid.Row="2" BackgroundColor="Fuchsia">
+				<local:CalcButton DisplayText="8" Command="{Binding NumberCommand}" CommandParameter="8" />
+			</StackLayout>
+			<StackLayout Grid.Column="2" Grid.Row="2" BackgroundColor="Aqua">
+				<local:CalcButton DisplayText="9" Command="{Binding NumberCommand}" CommandParameter="9" />
+			</StackLayout>
+			<StackLayout Grid.Column="3" Grid.Row="2" BackgroundColor="Fuchsia">
+				<local:CalcButton DisplayText="*" LabelColor="#F68212" Command="{Binding OperatorCommand}" CommandParameter="*"/>
+			</StackLayout>
+			<StackLayout Grid.Column="0" Grid.Row="3" BackgroundColor="Blue">
+				<local:CalcButton DisplayText="4" Command="{Binding NumberCommand}" CommandParameter="4" />
+			</StackLayout>
+			<StackLayout Grid.Column="1" Grid.Row="3" BackgroundColor="Gray">
+				<local:CalcButton DisplayText="5" Command="{Binding NumberCommand}" CommandParameter="5" />
+			</StackLayout>
+			<StackLayout Grid.Column="2" Grid.Row="3" BackgroundColor="Blue">
+				<local:CalcButton DisplayText="6" Command="{Binding NumberCommand}" CommandParameter="6" />
+			</StackLayout>
+			<StackLayout Grid.Column="3" Grid.Row="3" BackgroundColor="Gray">
+				<local:CalcButton DisplayText="-" LabelColor="#F68212" Command="{Binding OperatorCommand}" CommandParameter="-"/>
+			</StackLayout>
+			
+			<StackLayout Grid.Column="0" Grid.Row="4" BackgroundColor="Blue">
+				<local:CalcButton DisplayText="1" Command="{Binding NumberCommand}" CommandParameter="1" />
+			</StackLayout>
+			<StackLayout Grid.Column="1" Grid.Row="4" BackgroundColor="Gray">
+				<local:CalcButton DisplayText="2" Command="{Binding NumberCommand}" CommandParameter="2" />
+			</StackLayout>
+			<StackLayout Grid.Column="2" Grid.Row="4" BackgroundColor="Blue">
+				<local:CalcButton DisplayText="3" Command="{Binding NumberCommand}" CommandParameter="3" />
+			</StackLayout>
+			<StackLayout Grid.Column="3" Grid.Row="4" BackgroundColor="Gray">
+				<local:CalcButton DisplayText="+" LabelColor="#F68212" Command="{Binding OperatorCommand}" CommandParameter="+" />
+			</StackLayout>
+			
+			<StackLayout Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2" BackgroundColor="Blue">
+				<local:CalcButton DisplayText="0" Command="{Binding NumberCommand}" CommandParameter="0" />
+			</StackLayout>
+			<StackLayout Grid.Column="2" Grid.Row="5" BackgroundColor="Blue">
+				<local:CalcButton DisplayText="." />
+			</StackLayout>
+			<StackLayout Grid.Column="3" Grid.Row="5" BackgroundColor="Gray">
+				<local:CalcButton DisplayText="=" LabelColor="#F68212" Command="{Binding OperatorCommand}" CommandParameter="="/>
+			</StackLayout>
+		</Grid>
+	</ContentPage.Content>
+</ContentPage>
